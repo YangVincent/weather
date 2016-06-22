@@ -4,6 +4,7 @@ This website allows the user to enter their ZIP code or the name of their city/t
 
 ####Instructions
 This project is entirely client-side, and can be set up with ease.
+
 1. `git clone https://github.com/YangVincent/weather.git`
 2. `cd weather`
 3. `open weather.html`
