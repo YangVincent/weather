@@ -171,7 +171,7 @@ var view = {
     var woeid = document.createElement('script');
     woeid.id = 'woeid';
     normal=false;
-    woeid.src = "http://query.yahooapis.com/v1/public/yql?q=select+*+from+geo.places+where+text+=+'"+l+"'&format=json&callback=callbackFunction1 ";
+    woeid.src = "https://query.yahooapis.com/v1/public/yql?q=select+*+from+geo.places+where+text+=+'"+l+"'&format=json&callback=callbackFunction1 ";
     document.body.appendChild(woeid);
   },
   submit2: function() {
@@ -187,7 +187,7 @@ var view = {
     var woeid = document.createElement('script');
     woeid.id = 'woeid';
     normal=true;
-    woeid.src = "http://query.yahooapis.com/v1/public/yql?q=select+*+from+geo.places+where+text+=+'"+l+"'&format=json&callback=callbackFunction1 ";
+    woeid.src = "https://query.yahooapis.com/v1/public/yql?q=select+*+from+geo.places+where+text+=+'"+l+"'&format=json&callback=callbackFunction1 ";
     document.body.appendChild(woeid);
   },
   setup: function() {
