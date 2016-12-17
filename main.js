@@ -168,11 +168,21 @@ var view = {
       l = 'davis'; //default is davis
     }
 
-    var woeid = document.createElement('script');
-    woeid.id = 'woeid';
     normal=false;
-    woeid.src = "https://query.yahooapis.com/v1/public/yql?q=select+*+from+geo.places+where+text+=+'"+l+"'&format=json&callback=callbackFunction1 ";
-    document.body.appendChild(woeid);
+
+	var http = new XMLHttpRequest();
+  	var url = "https://query.yahooapis.com/v1/public/yql?q=select%20woeid,name,admin1,country%20from%20geo.places%20where%20text='"+l+"'&format=json"
+  	http.open("POST", url, true);
+  
+  	//Send the proper header information along with the request
+  	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  
+  	http.onreadystatechange = function() {//Call a function when the state changes.
+  	    if(http.readyState == 4 && http.status == 200) {
+  	        control.placeCallback(JSON.parse(http.responseText));
+  	    }
+  	}
+  	http.send();
   },
   submit2: function() {
     var l = document.getElementById('zip2').value;
@@ -184,11 +194,21 @@ var view = {
     if (d != null){
       document.body.removeChild(d);
     }
-    var woeid = document.createElement('script');
-    woeid.id = 'woeid';
     normal=true;
-    woeid.src = "https://query.yahooapis.com/v1/public/yql?q=select+*+from+geo.places+where+text+=+'"+l+"'&format=json&callback=callbackFunction1 ";
-    document.body.appendChild(woeid);
+	var http = new XMLHttpRequest();
+  	var url = "https://query.yahooapis.com/v1/public/yql?q=select%20woeid,name,admin1,country%20from%20geo.places%20where%20text='"+l+"'&format=json"
+  	http.open("POST", url, true);
+  
+  	//Send the proper header information along with the request
+  	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  
+  	http.onreadystatechange = function() {//Call a function when the state changes.
+  	    if(http.readyState == 4 && http.status == 200) {
+  	        control.placeCallback(JSON.parse(http.responseText));
+  	    }
+  	}
+  	http.send();
+
   },
   setup: function() {
 
